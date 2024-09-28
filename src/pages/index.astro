@@ -263,8 +263,33 @@ const optimizedBg = await getImage({src: hero2, format: 'webp', quality: 10});
         </form>
     </div>
 	<script>
-		import '../scripts/form.js';
-	 </script>
+		// Type assertions for HTML elements
+		const form = document.querySelector("#form") as HTMLFormElement | null;
+		const submitButton = document.querySelector("#submit") as HTMLButtonElement | null;
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbwLahxTKFzc7rvDJQUW1aU-Sxkx6_Fl3iB1Q7EnGtbYJ4IcYKXaPaJHynv1YYcdf61o/exec';
+	  
+		// Ensure elements exist before adding event listeners
+		if (form && submitButton) {
+		  form.addEventListener('submit', (e: Event) => {
+			submitButton.disabled = true;
+			e.preventDefault();
+	  
+			// Create a new FormData object from the form
+			const requestBody = new FormData(form);
+	  
+			// Fetch the URL with POST method and the FormData body
+			fetch(scriptURL, { method: 'POST', body: requestBody })
+			  .then(response => {
+				alert('Success!');
+				submitButton.disabled = false;
+			  })
+			  .catch(error => {
+				alert('Error: ' + error.message);
+				submitButton.disabled = false;
+			  });
+		  });
+		}
+	  </script>
   </section>
 
   <section class="py-12 mx-5">
