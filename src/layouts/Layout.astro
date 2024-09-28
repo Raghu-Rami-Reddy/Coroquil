@@ -1,0 +1,36 @@
+---
+export const prerender = true;
+---
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COROQUIL-Zn</title>
+    <meta name="description" content="Experience Relief with Coroquil-Zn | Boost Your Immunity with Our Innovative Zinc-Based Formula">
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" as="style" crossorigin>
+  </head>
+  <body class="bg-[#EDEFEB]" style="font-family: Inter Tight, Open Sans, sans-serif;">
+    <header class=" flex justify-center w-screen" >
+        <nav class="flex items-center bg-white/65 m-2 md:mt-4 text-white  md:h-[90px] w-full mx-4 rounded-full fixed drop-shadow-2xl border-stone-500 z-50" style="color: #320707; max-width: 1320px;">
+            <ul class="flex justify-between w-full font-bold text-lg md:text-2xl p-4 md:px-8">
+                <li>
+                    <h1 class="font-bold">COROQIL-Zn</h1>
+                </li>
+                <li>
+                    <a href="https://coroquilzn.myshopify.com/" class="text-white bg-[#9fe870] hover:bg-[#c1e8a8] hover:text-[#264d0c] rounded-full px-2 pt-2 pb-1 text-lg font-bold md:px-3 md:pt-3 md:pb-2 md:text-2xl">Shop Now</a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+    <main >
+      <slot class="w-screen"/>
+    </main>
+    <footer class="bg-[#2E481A] p-4 text-center text-white text-lg md:text-2xl">
+      <p> © Copyright 2024 Remedium Therapeutics- All Rights Reserved </p>
+    </footer>
+  </body>
+</html>
